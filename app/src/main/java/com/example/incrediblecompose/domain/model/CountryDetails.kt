@@ -59,8 +59,8 @@ data class Timezone(
 )
 
 data class Vaccination(
-    val message: String?,
-    val name: String?
+    val message: String,
+    val name: String
 )
 
 data class Water(
