@@ -16,7 +16,7 @@ class CountryListViewModel @Inject constructor(private val getCountryListUseCase
 
 
     private val _countryList = mutableStateOf(CountryListState())
-    private val countryList : State<CountryListState> = _countryList
+     val countryList : State<CountryListState> = _countryList
 
 
     init {

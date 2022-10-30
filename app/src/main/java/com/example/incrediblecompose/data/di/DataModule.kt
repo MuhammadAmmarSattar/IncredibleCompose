@@ -16,16 +16,18 @@ import javax.inject.Singleton
 @Module
 object DataModule {
 
+
     @Singleton
     @Provides
-    fun provideAPiService(): ApiService {
-        return Retrofit.Builder().baseUrl("").addConverterFactory(GsonConverterFactory.create())
-            .build().create(ApiService::class.java)
-
+    fun provideApiService(): ApiService {
+        return Retrofit.Builder().baseUrl("https://travelbriefing.org/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+            .create(ApiService::class.java)
     }
 
     @Provides
-    fun provideCountryRepo(apiService: ApiService):CountryRepo{
+    fun provideCountryRepo(apiService:ApiService):CountryRepo{
         return CountryRepoImpl(apiService)
     }
+
 }
